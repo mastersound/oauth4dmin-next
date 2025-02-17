@@ -1,10 +1,10 @@
 pipeline{
     agent any
-    tools {nodejs "my-nodejs"}
+    tools {nodejs "NodexJS"}
     stages{
         stage("Build"){
             steps{
-                nodejs("my-nodejs") {
+                nodejs("NodexJS") {
                     sh 'npm install'
                     sh 'npm build'
                 }
@@ -12,7 +12,7 @@ pipeline{
         }
         stage("Start"){
             steps{
-                nodejs("my-nodejs") {
+                nodejs("NodexJS") {
                     sh 'npm start'
                 }
                 echo "App started successfully"
